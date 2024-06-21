@@ -47,8 +47,9 @@ namespace TechJobs6Persistent.Controllers
                     Location = addEmployerViewModel.Location
                 };
 
-                //if the new employer has the same name as the one in the Employers table it will not proceed but otherwise it will save changes.
-                if (context.Employers.Any(e => e.Name == addEmployerViewModel.Name))
+
+                //if the new employer name and location already exists => it will not proceed to Employer list
+                if (context.Employers.Any(e => e.Name == addEmployerViewModel.Name && e.Location == addEmployerViewModel.Location))
                 {
                     return View("Create", addEmployerViewModel);
                 }
