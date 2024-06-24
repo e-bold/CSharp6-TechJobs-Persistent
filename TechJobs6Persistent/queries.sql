@@ -26,7 +26,7 @@ WHERE Location = "St. Louis, MO";
 /*
 SELECT Name, SkillName 
 FROM jobskill
-JOIN jobs ON jobs.Id = jobskill.JobsId
-JOIN skills ON skills.Id = jobskill.SkillsId
+INNER JOIN jobs ON jobs.Id = jobskill.JobsId
+INNER JOIN skills ON skills.Id = jobskill.SkillsId
 ORDER BY SkillName;
 */
